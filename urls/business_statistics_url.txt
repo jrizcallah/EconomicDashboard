@@ -1,0 +1,1 @@
+https://www.census.gov/econ_export/?format=csv&mode=report&default=false&errormode=Dep&charttype=&chartmode=&chartadjn=&submit=GET+DATA&program=BFS&startYear=2004&endYear=2024&categories%5B0%5D=TOTAL&dataType=BA_BA&geoLevel=CO&adjusted=false&notAdjusted=true&errorData=false

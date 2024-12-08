@@ -28,6 +28,9 @@ def make_main_graph_data(business_entity_data,
     graph_data = business_statistics_data.merge(business_entity_data,
                                                 left_index=True, right_index=True)
     graph_data.columns = ['Business Statistics', 'Business Entities']
+    graph_data = graph_data.reset_index().melt(id_vars=['index'], 
+                                               value_vars=['Business Statistics', 'Business Entities'])
+    graph_data.columns = ['month', 'series', 'value']
     return graph_data
 
 

@@ -12,8 +12,10 @@ st.set_page_config(
 
 main_graph_data = pd.read_csv(st.secrets.blobs.GRAPH_DATA_BLOB_URL)
 main_graph_data = main_graph_data.reset_index()
+main_graph_data['month'] = pd.to_datetime(main_graph_data['month'])
 
 business_entity_data = pd.read_csv(st.secrets.blobs.BUSINESS_ENTITIES_BLOB_URL)
+business_entity_data['entityformdate'] = pd.to_datetime(business_entity_data['entityformdate'])
 
 
 with st.sidebar:

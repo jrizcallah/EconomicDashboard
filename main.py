@@ -1,10 +1,8 @@
 import streamlit as st
 import pandas as pd
 import altair as alt
-import plotly.express as px
 from datetime import datetime
-from load_data import load_data
-from config import *
+import os
 
 st.set_page_config(
     page_title='Colorado Economic Dashboard',
@@ -12,10 +10,10 @@ st.set_page_config(
     initial_sidebar_state='collapsed'
 )
 
-main_graph_data = load_data(MAIN_GRAPH_DATA_PARQUET_PATH)
+main_graph_data = pd.read_csv(st.secrets.blobs.GRAPH_DATA_BLOB_URL)
 main_graph_data = main_graph_data.reset_index()
 
-business_entity_data = load_data(BUSINESS_ENTITY_PARQUET_PATH)
+business_entity_data = pd.read_csv(st.secrets.blobs.BUSINESS_ENTITIES_BLOB_URL)
 
 
 with st.sidebar:
